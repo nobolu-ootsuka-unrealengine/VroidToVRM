@@ -6,9 +6,9 @@
 
 ・VRMをすぐインポートして、シェーダー適用までスムーズにできる OK
 
- ■ Tools > VRM - Animation Setup の使い方 すべてのレベルの Render Pipeline を None に設定してMToonを見えるようにする。
+ ■ Tools > VRM - Animation Setup の使い方 
  
-  ・Tools/VRM - Disable URP (All Quality Levels) 
+  ・Tools/VRM - Disable URP (All Quality Levels) すべてのレベルの Render Pipeline を None に設定してMToonを見えるようにする。
   
   ・Tools/VRM - Shader Reapplier MToonシェーダーを当てなおします プロジェクト全体
   
