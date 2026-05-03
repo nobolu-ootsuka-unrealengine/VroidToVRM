@@ -18,7 +18,7 @@
 
 ・fbxやBVHなどのモーションファイルを、VRMへ手軽にリターゲティングして再生できる OK
 
-   ■ Tools > VRM - Animation Setup の使い方
+　　■ Tools > VRM - Animation Setup の使い方
  
    1. Animation FBX 欄 → Project ウィンドウからアニメーション FBXまたはBVH をドラッグ
   
