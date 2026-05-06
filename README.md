@@ -7,17 +7,25 @@ Unity Engine 6000.4.5f1 向けです。
 -------------------------------------------------
 
 大枠の流れ
+
 Tools の使い方
+
 １，UnityへVRMファイルドラッグしたら
+
 以下をするとシェーダーがVRM/MToon
+
 VRM - Shader Reapplier
+
 VRM - Shader Reapplier (Selected Folder)
+
 VRM - Disable URP (All Quality Levels)
 
 ２，つぎにシーンを作成します。
+
 VRM - Scene Setup
 
 ３，アニメーションを設定します。
+
 VRM - Animation Setup
 
 -------------------------------------------------
