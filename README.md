@@ -12,19 +12,19 @@ Tools の使い方
 
 １，UnityへVRMファイルドラッグしたら
 
-以下をするとシェーダーがVRM/MToon
+以下をするとシェーダーがVRM/MToonになります。
 
-VRM - Shader Reapplier
+VRM - Shader Reapplier　プロジェクト全体
 
 VRM - Shader Reapplier (Selected Folder)
 
 VRM - Disable URP (All Quality Levels)
 
-２，つぎにシーンを作成します。
+２，つぎにこのツールでシーンを作成します。
 
 VRM - Scene Setup
 
-３，アニメーションを設定します。
+３，つぎにこのツールでアニメーションを設定します。
 
 VRM - Animation Setup
 
