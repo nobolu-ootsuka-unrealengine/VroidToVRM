@@ -22,7 +22,7 @@ D:\Download\VroidToVRM-main\VroidToVRM-main\VroidToVRM\VRMtoUnity3D
 
 以下をするとシェーダーがVRM/MToonになります。
 
-VRM - Shader Reapplier　プロジェクト全体
+VRM - Shader Reapplier　ウィンドウ
 
 VRM - Shader Reapplier (Selected Folder)
 
@@ -50,7 +50,7 @@ VRM - Animation Setup
 
 　　■ Tools > VRM - Animation Setup の使い方 
  
-　　・Tools/VRM - Shader Reapplier MToonシェーダーを当てなおします プロジェクト全体
+　　・Tools/VRM - Shader Reapplier MToonシェーダーを当てなおします ウィンドウ
 
 <img width="333" height="442" alt="Image" src="https://github.com/user-attachments/assets/83b80f46-0d12-4225-a272-cb0f958fd7cd" />
   
