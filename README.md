@@ -10,6 +10,10 @@ Unity Engine 6000.4.5f1 向けです。
 
 大枠の流れ
 
+０，UnityHubで「Add」で以下のフォルダを選びます。
+
+D:\Download\VroidToVRM-main\VroidToVRM-main\VroidToVRM\VRMtoUnity3D
+
 Tools の使い方
 
 １，UnityへVRMファイルドラッグしたら
