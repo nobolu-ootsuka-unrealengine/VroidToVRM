@@ -16,6 +16,8 @@ D:\Download\VroidToVRM-main\VroidToVRM-main\VroidToVRM\VRMtoUnity3D
 
 # Tools の使い方
 
+<img width="320" height="138" alt="Image" src="https://github.com/user-attachments/assets/f1b0dc3a-539a-4fd1-ab64-5446f6da99d5" />
+
 # １，UnityへVRMファイルドラッグしたら
 
 以下をするとシェーダーがVRM/MToonになります。
@@ -49,6 +51,8 @@ VRM - Animation Setup
 　　■ Tools > VRM - Animation Setup の使い方 
  
 　　・Tools/VRM - Shader Reapplier MToonシェーダーを当てなおします プロジェクト全体
+
+<img width="333" height="442" alt="Image" src="https://github.com/user-attachments/assets/83b80f46-0d12-4225-a272-cb0f958fd7cd" />
   
 　　・Tools/VRM - Shader Reapplier (select Folder) MToonシェーダーを当てなおします
  
@@ -58,6 +62,8 @@ VRM - Animation Setup
 
 　　■ Tools > VRM - Scene Setup
 
+<img width="321" height="531" alt="Image" src="https://github.com/user-attachments/assets/16533f93-f8af-42e5-a67f-cf14839a8652" />
+
 　　1.VRM Prefabに　VRMのprefabをドラッグして「新規シーンを作成してセットアップ」
 
 　　2.カメラワーク（オービット）の注目点を胴、顔に設定し、距離をドラッグすればズームインアウトできます。
@@ -66,6 +72,8 @@ VRM - Animation Setup
 # ・fbxやBVHなどのモーションファイルを、VRMへ手軽にリターゲティングして再生できる OK
 
 　　■ Tools > VRM - Animation Setup の使い方
+
+<img width="323" height="297" alt="Image" src="https://github.com/user-attachments/assets/42823be5-1d2d-4e6c-9552-f1756545889c" />
  
 　　1. Animation FBX 欄 → Project ウィンドウからアニメーション FBXまたはBVH をドラッグ
   
