@@ -42,12 +42,12 @@ VRM - Animation Setup
 
 　　■ Tools > VRM - Animation Setup の使い方 
  
-　　・Tools/VRM - Disable URP (All Quality Levels) すべてのレベルの Render Pipeline を None に設定してMToonを見えるようにする。
-  
 　　・Tools/VRM - Shader Reapplier MToonシェーダーを当てなおします プロジェクト全体
   
 　　・Tools/VRM - Shader Reapplier (select Folder) MToonシェーダーを当てなおします
-  
+ 
+　　・Tools/VRM - Disable URP (All Quality Levels) すべてのレベルの Render Pipeline を None に設定してMToonを見えるようにする。
+ 
 ・可能なら、カメラ設定やカメラワークも手軽に操作できる
 
 　　■ Tools > VRM - Scene Setup
