@@ -18,7 +18,7 @@ D:\Download\VroidToVRM-main\VroidToVRM-main\VroidToVRM\VRMtoUnity3D
 
 <img width="320" height="138" alt="Image" src="https://github.com/user-attachments/assets/f1b0dc3a-539a-4fd1-ab64-5446f6da99d5" />
 
-# １，UnityへVRMファイルドラッグしたら
+## １，UnityへVRMファイルドラッグしたら
 
 以下をするとシェーダーがVRM/MToonになります。
 
@@ -28,11 +28,11 @@ VRM - Shader Reapplier (Selected Folder)
 
 VRM - Disable URP (All Quality Levels)
 
-# ２，つぎにこのツールでシーンを作成します。
+## ２，つぎにこのツールでシーンを作成します。
 
 VRM - Scene Setup
 
-# ３，つぎにこのツールでアニメーションを設定します。
+## ３，つぎにこのツールでアニメーションを設定します。
 
 VRM - Animation Setup
 
@@ -42,11 +42,11 @@ VRM - Animation Setup
 
 # 要望への対応とツール詳細。
 
-# ・Unityアセットストアで取得したワールドを、気軽にUnityへインポートして使える 
+## ・Unityアセットストアで取得したワールドを、気軽にUnityへインポートして使える 
 　
 　　Unityアセットストアには沢山素材がありすぎるのとスケールが様々なため未着手
 
-# ・VRMをすぐインポートして、シェーダー適用までスムーズにできる OK
+## ・VRMをすぐインポートして、シェーダー適用までスムーズにできる OK
 
 　　■ Tools > VRM - Animation Setup の使い方 
  
@@ -58,7 +58,7 @@ VRM - Animation Setup
  
 　　・Tools/VRM - Disable URP (All Quality Levels) すべてのレベルの Render Pipeline を None に設定してMToonを見えるようにする。
  
-# ・可能なら、カメラ設定やカメラワークも手軽に操作できる
+## ・可能なら、カメラ設定やカメラワークも手軽に操作できる
 
 　　■ Tools > VRM - Scene Setup
 
@@ -69,7 +69,7 @@ VRM - Animation Setup
 　　2.カメラワーク（オービット）の注目点を胴、顔に設定し、距離をドラッグすればズームインアウトできます。
 
 
-# ・fbxやBVHなどのモーションファイルを、VRMへ手軽にリターゲティングして再生できる OK
+## ・fbxやBVHなどのモーションファイルを、VRMへ手軽にリターゲティングして再生できる OK
 
 　　■ Tools > VRM - Animation Setup の使い方
 
