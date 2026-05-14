@@ -11,6 +11,10 @@ setlocal enabledelayedexpansion
 
 :: --- Find Blender ---
 set BLENDER=
+for /d %%D in ("C:\Program Files\WindowsApps\*BlenderFoundation*") do (
+    set TRY=%%~fD\Blender\blender.exe
+    if exist "!TRY!" ( set BLENDER=!TRY! & goto :found_blender )
+)
 for %%V in (5.1 5.0 4.4 4.3 4.2 4.1 4.0 3.6) do (
     set TRY=C:\Program Files\Blender Foundation\Blender %%V\blender.exe
     if exist "!TRY!" ( set BLENDER=!TRY! & goto :found_blender )
