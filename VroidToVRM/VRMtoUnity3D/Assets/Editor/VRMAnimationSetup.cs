@@ -27,6 +27,12 @@ public class VRMAnimationSetup : EditorWindow
     {
         vrmTarget = (GameObject)EditorGUILayout.ObjectField("VRM GameObject (Hierarchy)", vrmTarget, typeof(GameObject), true);
 
+        using (new EditorGUI.DisabledGroupScope(vrmTarget == null))
+        {
+            if (GUILayout.Button("FaceBlendShapeアニメを読む為にFace親に空GameObject追加", GUILayout.Height(30)))
+                InsertFaceParent();
+        }
+
         EditorGUILayout.Space(8);
 
         // --- FBX セクション ---
@@ -174,6 +180,98 @@ public class VRMAnimationSetup : EditorWindow
     }
 
     // ------------------------------------------------------------------ 共通
+
+    // ------------------------------------------------------------------ Face
+
+    private void InsertFaceParent()
+    {
+        if (vrmTarget == null)
+        {
+            UnityEngine.Debug.LogError("[VRM Setup] VRM GameObject を選択してください。");
+            return;
+        }
+
+        string prefabPath = PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(vrmTarget);
+        if (string.IsNullOrEmpty(prefabPath))
+            prefabPath = AssetDatabase.GetAssetPath(vrmTarget);
+
+        if (string.IsNullOrEmpty(prefabPath))
+        {
+            UnityEngine.Debug.LogError("[VRM Setup] 選択したVRMのPrefab Assetが見つかりません。Hierarchy上のPrefabインスタンス、またはPrefab Assetを選択してください。");
+            return;
+        }
+
+        GameObject prefabRoot = PrefabUtility.LoadPrefabContents(prefabPath);
+        try
+        {
+            Transform face = FindChildRecursive(prefabRoot.transform, "Face");
+            if (face == null)
+            {
+                UnityEngine.Debug.LogError($"[VRM Setup] Prefab Asset内にFaceが見つかりません: {prefabPath}");
+                return;
+            }
+
+            Transform oldParent = face.parent;
+            if (oldParent == null)
+            {
+                UnityEngine.Debug.LogError("[VRM Setup] Faceに親がないため、空GameObjectを差し込めません。");
+                return;
+            }
+
+            if (oldParent.name == "Face")
+            {
+                UnityEngine.Debug.LogWarning($"[VRM Setup] Prefab Asset側のFaceの親はすでに {oldParent.name} です: {prefabPath}");
+                return;
+            }
+
+            Vector3 localPosition = face.localPosition;
+            Quaternion localRotation = face.localRotation;
+            Vector3 localScale = face.localScale;
+            int siblingIndex = face.GetSiblingIndex();
+
+            GameObject faceParent = new GameObject("Face");
+            Transform faceParentTransform = faceParent.transform;
+            faceParentTransform.SetParent(oldParent, false);
+            faceParentTransform.SetSiblingIndex(siblingIndex);
+            faceParentTransform.localPosition = localPosition;
+            faceParentTransform.localRotation = localRotation;
+            faceParentTransform.localScale = localScale;
+
+            face.SetParent(faceParentTransform, false);
+            face.localPosition = Vector3.zero;
+            face.localRotation = Quaternion.identity;
+            face.localScale = Vector3.one;
+
+            PrefabUtility.SaveAsPrefabAsset(prefabRoot, prefabPath);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+
+            Object prefabAsset = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+            if (prefabAsset != null)
+                Selection.activeObject = prefabAsset;
+
+            UnityEngine.Debug.Log($"[VRM Setup] Prefab Asset側に Face > Face を作成しました: {prefabPath}");
+            EditorUtility.DisplayDialog("Face 親 GameObject 追加", $"Prefab Asset側に Face > Face を作成しました。\n{prefabPath}", "OK");
+        }
+        finally
+        {
+            PrefabUtility.UnloadPrefabContents(prefabRoot);
+        }
+    }
+
+    private static Transform FindChildRecursive(Transform parent, string childName)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.name == childName)
+                return child;
+
+            Transform found = FindChildRecursive(child, childName);
+            if (found != null)
+                return found;
+        }
+        return null;
+    }
 
     private void ApplySetup(string sourcePath, AnimationClip clip)
     {
